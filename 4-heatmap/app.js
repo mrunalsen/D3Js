@@ -1,7 +1,7 @@
 async function draw(el, scale) {
   // Data
   const dataset = await d3.json('data.json');
-  dataset.sort((a, b) => a - b);
+  // dataset.sort((a, b) => a - b);
 
   // Dimensions
   let dimensions = {
@@ -22,7 +22,7 @@ async function draw(el, scale) {
   if (scale === 'linear') {
     colorScale = d3.scaleLinear()
       .domain(d3.extent(dataset))
-      .range(['white', 'green']);
+      .range(['white', '#008001']);
   }
   //quantize scale
   else if (scale === 'quantize') {
@@ -44,7 +44,7 @@ async function draw(el, scale) {
   //Rectangles
   svg.append('g')
     .attr('transform', 'translate(2,2)')
-    .attr('fill', 'ddd')
+    // .attr('fill', 'ddd')
     .attr('stroke', 'black')
     .selectAll('rect')
     .data(dataset)

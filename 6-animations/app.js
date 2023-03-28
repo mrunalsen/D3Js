@@ -103,6 +103,7 @@ async function draw() {
       .attr('y', d => yScale(yAccessor(d)) - 10)
       .text(yAccessor);
 
+    // Mean Line
     const mean = d3.mean(dataset, xAccessor);
 
     meanLine.raise()
@@ -114,12 +115,7 @@ async function draw() {
 
     // Draw Axis
     const xAxis = d3.axisBottom(xScale);
-
-
-
     xAxisGroup.transition().call(xAxis);
-
-
   }
   d3.select('#metric')
     .on('change', function (e) {
