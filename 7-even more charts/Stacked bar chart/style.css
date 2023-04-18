@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  color: white;
+  height: 100%;
+}
+
+#chart {
+  margin: 25px auto;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+}
